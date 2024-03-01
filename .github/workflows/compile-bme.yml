@@ -30,10 +30,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+      #assume since we're using the windows-2022 image, the included VS2022 Enterprise should work fine by default... 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
-      with:
-        vs-version: '[17.9.0,17.9.2]'
         
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
